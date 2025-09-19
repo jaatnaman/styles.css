@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>My Game Arcade</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <h1>My Game Arcade</h1>
+    <p class="sub">Free HTML5 games — play online</p>
+  </header>
+
+  <main class="container">
+    <input id="search" class="search" placeholder="Search games..." />
+
+    <section class="grid" id="grid">
+      <a class="card" href="games/snake.html">
+        <div class="thumb">🐍</div>
+        <h3>Snake</h3>
+        <p class="meta">Classic Snake — arrows / WASD</p>
+      </a>
+
+      <a class="card" href="games/tictactoe.html">
+        <div class="thumb">❌⭕️</div>
+        <h3>Tic Tac Toe</h3>
+        <p class="meta">Local 2-player</p>
+      </a>
+    </section>
+  </main>
+
+  <footer class="foot">Built with ❤️ — Demo</footer>
+
+  <script>
+    // Simple search filter
+    document.getElementById('search').addEventListener('input', function (e) {
+      const q = e.target.value.toLowerCase();
+      document.querySelectorAll('.card').forEach(card => {
+        card.style.display = card.textContent.toLowerCase().includes(q) ? '' : 'none';
+      });
+    });
+  </script>
+</body>
+</html>
